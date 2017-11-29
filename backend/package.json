@@ -1,5 +1,5 @@
 {
-  "name": "backend",
+  "name": "letstalk-backend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -16,7 +16,7 @@
     "koa-router": "^7.2.1",
     "koa-session": "^5.5.0",
     "koa-static": "^4.0.1",
-    "loglevel": "^1.5.1",
+    "log4js": "^2.3.12",
     "socket.io": "^2.0.4"
   },
   "devDependencies": {

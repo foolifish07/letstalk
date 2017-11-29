@@ -1,6 +1,6 @@
 let socket = require('socket.io');
 let http = require('http');
-let log = require('../logger');
+let log = require('../logger').getLogger('socket')
 const { isString, isObject, isFunction } = require('../utils');
 
 module.exports = (app) => {

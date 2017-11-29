@@ -1,9 +1,26 @@
-let log = require('loglevel');
+let log4js = require('log4js');
 
+let level = null;
 if (process.env.NODE_ENV === 'test') {
-  log.setLevel(3);
+  level = 'error';
 } else {
-  log.setLevel(2);
+  level = 'info';
 }
 
-module.exports = log;
+log4js.configure({
+  appenders: {
+    'out': { type: 'stdout' },
+    'app': {
+      type: 'file',
+      filename: 'log/letstalk.log',
+      maxLogSize: 10 * 1024 * 1024, // in bytes
+      backups: 3,
+      compress: true
+    }
+  },
+  categories: {
+    default: { appenders: [ 'out', 'app' ], level: level }
+  }
+});
+
+module.exports = log4js;
