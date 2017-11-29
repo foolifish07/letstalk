@@ -1,22 +1,31 @@
 language: node_js
 
 node_js:
-- "7"
-- "8"
+  - "8"
 
 sudo: required
 
 services:
-- docker
+  - docker
 
 before_install:
-- pwd
-- sudo apt-get update
-- sudo apt-get --yes --option Dpkg::Options::="--force-confnew" install docker-ce
-- docker info
+  - pwd
+  - docker info
+
+after_install:
+  - echo "after script"
+
 
 before_script:
-  - NODE_ENV=test backend/node_modules/.mocha
+  - echo "before script"
+  - pwd
+
+script:
+  - echo "script"
+  - pwd
+
+after_script:
+  - echo "after script"
 
 cache:
   directories:
