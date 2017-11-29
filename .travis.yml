@@ -18,7 +18,13 @@ before_script:
 script:
   - ./build.sh
   - docker images | grep foolifish07
-  - docker push foolifish07/letstalk
+  - echo $DOCKER_USERNAME
+
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+      docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
+      docker push $DOCKER_USERNAME/letstalk;
+    fi
 
 cache:
   directories:
