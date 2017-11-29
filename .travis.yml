@@ -8,29 +8,14 @@ sudo: required
 services:
   - docker
 
-before_install:
-  - pwd
-  - docker info
-
 install:
-  - pwd
-  - cd ./backend && pwd
-  - pwd
-
-after_install:
-  - echo "after script"
-
+  - cd ./backend && npm install && cd ..
+  - cd ./frontend && npm install && cd ..
 
 before_script:
-  - echo "before script"
-  - pwd
 
 script:
-  - echo "script"
-  - pwd
-
-after_script:
-  - echo "after script"
+  - cd ./backend && npm run test && cd ..
 
 cache:
   directories:
