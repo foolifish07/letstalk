@@ -1,0 +1,19 @@
+language: node_js
+
+sudo: required
+
+services:
+- docker
+
+before_install:
+- sudo apt-get update
+- sudo apt-get --yes --option Dpkg::Options::="--force-confnew" install docker-ce
+
+cache:
+  directories:
+    - backend/node_modules
+    - frontend/node_modules
+
+before_script:
+  - NODE_ENV=test backend/node_modules/.mocha
+
