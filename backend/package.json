@@ -2,8 +2,10 @@
   "name": "letstalk-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
+    "start": "node app.js",
+    "dev": "forever --watch -t --minUptime 1000 --spinSleepTime 1000 app.js",
     "test": "NODE_ENV=test mocha"
   },
   "author": "",
@@ -23,6 +25,7 @@
     "babel-eslint": "^8.0.1",
     "eslint": "^4.10.0",
     "eslint-config-standard": "^10.2.1",
+    "forever": "^0.15.3",
     "mocha": "^4.0.1",
     "supertest": "^3.0.0"
   }
