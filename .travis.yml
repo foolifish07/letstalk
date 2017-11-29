@@ -13,9 +13,12 @@ install:
   - cd ./frontend && npm install && cd ..
 
 before_script:
+  - cd ./backend && npm run test && cd ..
 
 script:
-  - cd ./backend && npm run test && cd ..
+  - ./build.sh
+  - docker images | grep foolifish07
+  - docker push foolifish07/letstalk
 
 cache:
   directories:
