@@ -5,4 +5,7 @@ MAINTAINER foolifish07 <foolifish07@gmail.com>
 
 COPY ./backend /backend
 COPY ./frontend/dist /frontend/dist
-CMD node /backend/index.js
+
+WORKDIR /backend
+
+CMD ["npm", "start"]
