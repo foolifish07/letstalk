@@ -1,0 +1,58 @@
+/* clickable */
+.f-clickable {
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--primary-light);
+  }
+}
+
+
+/*
+Buttons
+*/
+.f-button {
+  height: 36px;
+  padding: 5px 12px;
+  line-height: 26px;
+
+  color: white;
+  background-color: var(--primary);
+
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: var(--primary-dark);
+  }
+}
+
+/*
+ size
+*/
+.f-button.small {
+  height: 27px;
+  padding: 3.5px 9px;
+  line-height: 20px;
+
+  font-size: 12px;
+}
+
+
+/*
+style
+ */
+.f-button.revert {
+  color: var(--primary);
+  background-color: transparent;
+
+  &:hover {
+    background-color: var(--primary-light);
+  }
+}

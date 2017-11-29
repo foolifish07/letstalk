@@ -1,0 +1,27 @@
+@import "./styles/button.scss";
+@import "./styles/input.scss";
+@import "./styles/scroll.scss";
+@import "./styles/text.scss";
+
+// color
+:root {
+  --primary-dark: #52a59d;
+  --primary: #75bbb4;
+  --primary-light: #E0F2F1;
+
+  --primary-grey: #cce2e1;
+  --primary-grey-light: #e3f3f2;
+
+  --grey: #bbbbbb;
+  --grey-light: #edf1f1;
+}
+
+// font
+body {
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+}
+
+// utils
+.f-paper {
+  box-shadow: 0 2px 3px grey;
+}
