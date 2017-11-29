@@ -18,4 +18,4 @@ build_frontend_and_backend
 docker build -t "foolifish07/letstalk" $here
 
 # Remove unsued docker cache
-docker rmi $(docker images -q -f dangling=true)
+docker rmi $(docker images -q -f dangling=true) || true
