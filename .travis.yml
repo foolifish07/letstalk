@@ -21,8 +21,11 @@ script:
   - docker images | grep foolifish07
   - echo $DOCKER_USERNAME
 
+# https://docs.travis-ci.com/user/environment-variables/#Default-Environment-Variables
 after_success:
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+  - echo $TRAVIS_BRANCH
+  - echo $TRAVIS_PULL_REQUEST
+  - if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
       docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
       docker push $DOCKER_USERNAME/letstalk;
     fi
