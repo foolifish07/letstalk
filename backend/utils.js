@@ -17,5 +17,5 @@ module.exports.isArray = (v) => {
 }
 
 module.exports.isFunction = (v) => {
-  return (typeof v) === 'function'
+  return (typeof v) === 'function';
 }
